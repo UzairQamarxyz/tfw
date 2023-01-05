@@ -6,7 +6,7 @@ Wrapper around terraform plan that provides a cleaner output as to what is being
 provisioned or destroyed.
 
 ** Usage
-#+begin_src bash
+#+begin_src
 tfw <arguments>
 Arguments:
        <terraform args>     All the arguments that terraform normally supports.
@@ -22,10 +22,10 @@ Arguments:
 ** Examples
 #+begin_src bash
 # Plan for Applying (Shows resource changes when running terraform apply)
-bash ${PROG} -verbose -show-all -var-file=test.tfvars
-bash ${PROG} -show-all -var-file=test.tfvars
+tfw -verbose -show-all -var-file=test.tfvars
+tfw -show-all -var-file=test.tfvars
 
 # Plan for Destroy (Shows resource changes when running terraform destroy)
-bash ${PROG} -verbose -destroy-plan -show-all -var-file=test.tfvars
-bash ${PROG} -show-all -destroy-plan -var-file=test.tfvars
+tfw -verbose -destroy-plan -show-all -var-file=test.tfvars
+tfw -show-all -destroy-plan -var-file=test.tfvars
 #+end_src
